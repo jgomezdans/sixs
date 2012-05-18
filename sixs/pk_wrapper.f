@@ -1,0 +1,24 @@
+      PROGRAM PK_WRAPPER 
+
+
+      IMPLICIT NONE
+
+      INTEGER MU_P,NP_P
+      PARAMETER (MU_P=25,NP_P=49)
+
+      INTEGER MU,NP
+      DOUBLE PRECISION KP(9),LAMBDA(1),ASOL,PHI0,AVIS,PHIV
+
+      DATA KP/3,0.1,45,0.01,75,0.01,1,1.0,0.4/
+      LAMBDA=0.75
+      ASOL=45.
+      PHI0=180.
+      AVIS=30.
+      PHIV=20.
+      MU=MU_P
+      NP=NP_P
+
+      CALL PREK6S(KP,LAMBDA,ASOL,PHI0,AVIS,PHIV)
+      
+
+      END
