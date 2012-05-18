@@ -85,8 +85,8 @@ if __name__ == "__main__":
     # but only on recent versions of numpy/f2py
     sys.argv.extend ( ["config_fc", "--fcompiler=gnu95", 
             "--f90exec=/usr/bin/gfortran44", 
-            "--f77flags='-ffixed-form -ffixed-line-length-none'", 
-            "--f90flags=' -ffixed-form -ffixed-line-length-none'"])
+            "--f77flags='-ffixed-form -ffixed-line-length-none'" ])
+
     name         = "sixs"  # name of the generated python extension (.so)
     description  = "6s python wrappers"
     author       = "J Gomez-Dans/NCEO & University College London"
