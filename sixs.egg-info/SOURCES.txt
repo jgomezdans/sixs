@@ -1,0 +1,9 @@
+setup.cfg
+setup.py
+sixs/__init__.py
+sixs.egg-info/PKG-INFO
+sixs.egg-info/SOURCES.txt
+sixs.egg-info/dependency_links.txt
+sixs.egg-info/entry_points.txt
+sixs.egg-info/not-zip-safe
+sixs.egg-info/top_level.txt
