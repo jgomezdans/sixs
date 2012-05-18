@@ -1,6 +1,7 @@
 setup.cfg
 setup.py
 sixs/__init__.py
+sixs/setup.py
 sixs.egg-info/PKG-INFO
 sixs.egg-info/SOURCES.txt
 sixs.egg-info/dependency_links.txt
