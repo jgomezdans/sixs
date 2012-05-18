@@ -87,17 +87,40 @@ if __name__ == "__main__":
 #            "--f90exec=/usr/bin/gfortran44", 
             "--f77flags='-ffixed-form -ffixed-line-length-none'" ])
 
-    name         = "sixs"  # name of the generated python extension (.so)
-    description  = "6s python wrappers"
-    author       = "J Gomez-Dans/NCEO & University College London"
-    author_email = "j.gomez-dans@ucl.ac.uk"
-    url="http://6s.ltdri.com/"
-    
-    setup( name=name,\
-        description=description, \
-        author=author, \
-        author_email = author_email, \
-        url=url,
-        configuration = configuration, version="1.0",\
-        packages=["sixs"])
-    
+    DISTNAME = 'sixs'
+    DESCRIPTION = '6s Python wrappers'
+    LONG_DESCRIPTION = open('README.rst').read()
+    MAINTAINER = 'Jose Gomez-Dans/NCEO & University College London'
+    MAINTAINER_EMAIL = "j.gomez-dans@ucl.ac.uk"
+    URL = 'http://6s.ltdri.com/'
+    LICENSE = 'Undecided'
+    VERSION = "1.0.1"
+    DOWNLOAD_URL="https://github.com/jgomezdans/sixs/zipball/master"
+    setup ( configuration = configuration,
+    name=DISTNAME,
+    maintainer=MAINTAINER,
+    include_package_data=True,
+    maintainer_email=MAINTAINER_EMAIL,
+    description=DESCRIPTION,
+    license=LICENSE,
+    url=URL,
+    version=VERSION,
+    download_url=DOWNLOAD_URL,
+    long_description=LONG_DESCRIPTION,
+    zip_safe=False, # the package can run out of an .egg file
+    classifiers=[
+        'Intended Audience :: Science/Research',
+        'Intended Audience :: Developers',
+        'License :: OSI Approved',
+        'Programming Language :: Fortran',
+        'Programming Language :: Python',
+        'Topic :: Software Development',
+        'Topic :: Scientific/Engineering',
+        'Operating System :: Microsoft :: Windows',
+        'Operating System :: POSIX',
+        'Operating System :: Unix',
+        'Operating System :: MacOS'
+        ], packages=["sixs"]
+        )
+            
+            
