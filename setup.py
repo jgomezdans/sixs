@@ -77,7 +77,7 @@ def configuration ( parent_package='', top_path=None ):
         "sixs/WALTBRDF.f", "sixs/WATE.f", \
         "sixs/WAVA1.f", "sixs/WAVA2.f", \
         "sixs/WAVA3.f","sixs/WAVA4.f", \
-        "sixs/WAVA5.f","sixs/WAVA6.f"])
+        "sixs/WAVA5.f","sixs/WAVA6.f", "sixs/sixs_mcrm_sim.f90"])
     return config
 
 if __name__ == "__main__":    
