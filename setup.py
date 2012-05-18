@@ -7,7 +7,6 @@ version = '1.0'
 def configuration ( parent_package='', top_path=None ):
     from numpy.distutils.misc_util import Configuration
     config = Configuration('sixs',parent_package,top_path, )
-    fflags= '-fdefault-real-8 -ffixed-form' 
     
     config.add_extension ('lib_sixs_mcrm', 
     sources = [ "sixs/lib_sixs_mcrm.pyf", \
@@ -81,9 +80,7 @@ def configuration ( parent_package='', top_path=None ):
         "sixs/WAVA5.f","sixs/WAVA6.f"])
     return config
 
-if __name__ == "__main__":
-    import sys
-    
+if __name__ == "__main__":    
     # This is a hack, as F77/F90 flags can be passed in the config object
     # but only on recent versions of numpy/f2py
     sys.argv.extend ( ["config_fc", "--fcompiler=gnu95", 
@@ -103,26 +100,4 @@ if __name__ == "__main__":
         url=url,
         configuration = configuration, version="1.0",\
         packages=["sixs"])
-    #####setup(name='sixs',
-        #####configuration=configuration,
-        #####version=version,
-        #####description="Python bindings for 6s. The 6S code is a basic RT code used for calculation of lookup tables in the MODIS atmospheric correction algorithm.'",
-        #####long_description="""\
-    #####""",
-        #####classifiers=[], # Get strings from http://pypi.python.org/pypi?%3Aaction=list_classifiers
-        #####keywords='remote_sensing,radiative_transfer,atmospheric_modelling',
-        #####author='J Gomez-Dans',
-        #####author_email='j.gomez-dans@ucl.ac.uk',
-        #####url='http://6s.ltdri.org/',
-        #####license='',
-        #####packages=find_packages(exclude=['ez_setup', 'examples', 'tests']),
-        #####include_package_data=True,
-        #####zip_safe=False,
-        #####install_requires=[
-            ###### -*- Extra requirements: -*-
-        #####],
-        #####entry_points="""
-        ###### -*- Entry points: -*-
-        #####""", 
-        
-        #####)
+    
