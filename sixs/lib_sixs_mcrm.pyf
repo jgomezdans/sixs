@@ -1,0 +1,127 @@
+!    -*- f90 -*-
+! Note: the context of this file is case sensitive.
+
+python module lib_sixs_mcrm ! in 
+    interface  ! in :rt_sixs_mcrm
+        subroutine main_ssssss(x,lout,xa,xb,xc,verbose,quad_info,anglem,rp) ! in :rt_sixs_mcrm:main_ssssss.f
+            double precision, intent(in), dimension(1000) :: x
+            double precision, intent(out) :: lout
+            double precision, intent(out) :: xa
+            double precision, intent(out)  :: xb
+            double precision, intent(out)  :: xc
+            integer, intent(in) :: verbose
+            integer, intent(in) :: quad_info
+            real dimension(48), intent(out) :: anglem
+            real dimension(49), intent(out) :: rp
+            real dimension(20) :: ext
+            real dimension(20) :: ome
+            real dimension(20) :: gasym
+            real dimension(20) :: phase
+            real dimension(20) :: qhase
+            real dimension(20) :: uhase
+            real :: xacc
+            integer :: nquad
+            real dimension(1501) :: s
+            real :: wlinf
+            real :: wlsup
+            integer :: iwr
+            logical :: ier
+            real dimension(3,20) :: roatm
+            real dimension(3,20) :: dtdir
+            real dimension(3,20) :: dtdif
+            real dimension(3,20) :: utdir
+            real dimension(3,20) :: utdif
+            real dimension(3,20) :: sphal
+            real dimension(20) :: wldis
+            real dimension(20) :: trayl
+            real dimension(20) :: traypl
+            real dimension(3,20) :: rqatm
+            real dimension(3,20) :: ruatm
+            real dimension(101) :: alt_z
+            real dimension(101) :: taer_z
+            real dimension(101) :: taer55_z
+            integer :: num_z
+            real :: delta
+            real :: sigma
+            integer :: igmax
+            real dimension(34) :: zpl
+            real dimension(34) :: ppl
+            real dimension(34) :: tpl
+            real dimension(34) :: whpl
+            real dimension(34) :: wopl
+            real dimension(34) :: z
+            real dimension(34) :: p
+            real dimension(34) :: t
+            real dimension(34) :: wh
+            real dimension(34) :: wo
+            real :: rmax
+            real :: rmin
+            real dimension(20,4) :: rn
+            real dimension(20,4) :: ri
+            real dimension(4) :: x1
+            real dimension(4) :: x2
+            real dimension(4) :: x3
+            real dimension(4) :: cij
+            real dimension(50) :: rsunph
+            real dimension(50) :: nrsunph
+            integer :: icp
+            integer :: irsunph
+            common /sixs_aer/ ext,ome,gasym,phase,qhase,uhase
+            common /sixs_test/ xacc
+            common /num_quad/ nquad
+            common /sixs_ffu/ s,wlinf,wlsup
+            common /sixs_ier/ iwr,ier
+            common /sixs_disc/ roatm,dtdir,dtdif,utdir,utdif,sphal,wldis,trayl,traypl,rqatm,ruatm
+            common /aeroprof/ alt_z,taer_z,taer55_z,num_z
+            common /sixs_del/ delta,sigma
+            common /multorder/ igmax
+            common /sixs_planesim/ zpl,ppl,tpl,whpl,wopl
+            common /sixs_atm/ z,p,t,wh,wo
+            common /mie_in/ rmax,rmin,rn,ri,x1,x2,x3,cij,rsunph,nrsunph,icp,irsunph
+        end subroutine main_ssssss
+        subroutine run_sixs_mcrm(uli,eei,thmi,sli,cabi,cwi,vaii,rnci,rsl1i,lambda,sza,saz,vza,vaz,brdf_s,brdf_v,albbrdf,sbrdf) ! in :rt_sixs_mcrm:sixs_mcrm_sim.f90
+            double precision intent(in) :: uli
+            double precision intent(in) :: eei
+            double precision intent(in) :: thmi
+            double precision intent(in) :: sli
+            double precision intent(in) :: cabi
+            double precision intent(in) :: cwi
+            double precision intent(in) :: vaii
+            double precision intent(in) :: rnci
+            double precision intent(in) :: rsl1i
+            double precision dimension(1),intent(in) :: lambda
+            double precision intent(in) :: sza
+            double precision intent(in) :: saz
+            double precision intent(in) :: vza
+            double precision intent(in) :: vaz
+            double precision dimension(11,13),intent(out) :: brdf_s
+            double precision dimension(11,13),intent(out) :: brdf_v
+            double precision intent(out) :: albbrdf
+            double precision dimension(1),intent(out) :: sbrdf
+        end subroutine run_sixs_mcrm
+        block data valeur ! in :rt_sixs_mcrm:AKTOOL.f
+            double precision dimension(200) :: ref
+            double precision dimension(200) :: ke
+            double precision optional,dimension(200) :: kab=.04664
+            double precision optional,dimension(200) :: kw=111*0.
+            double precision dimension(200) :: phis1
+            double precision dimension(200) :: phis2
+            double precision dimension(200) :: phis3
+            double precision dimension(200) :: phis4
+            double precision :: rsl1
+            double precision :: rsl2
+            double precision :: rsl3
+            double precision :: rsl4
+            double precision :: th2
+            double precision :: rsl
+            double precision :: rsoil
+            double precision :: rr1soil
+            double precision :: rrsoil
+            common /dat/ ref,ke,kab,kw
+            common /soildata/ phis1,phis2,phis3,phis4,rsl1,rsl2,rsl3,rsl4,th2,rsl,rsoil,rr1soil,rrsoil
+        end block data valeur
+    end interface 
+end python module lib_sixs_mcrm
+
+! This file was auto-generated with f2py (version:2).
+! See http://cens.ioc.ee/projects/f2py2e/
