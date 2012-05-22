@@ -6,7 +6,7 @@ version = '1.0'
 
 def configuration ( parent_package='', top_path=None ):
     from numpy.distutils.misc_util import Configuration
-    config = Configuration('sixs',parent_package,top_path, )
+    config = Configuration(parent_package,top_path, )
     
     config.add_extension ('lib_sixs_mcrm', 
     sources = [ "sixs/lib_sixs_mcrm.pyf", \
@@ -94,7 +94,7 @@ if __name__ == "__main__":
     MAINTAINER_EMAIL = "j.gomez-dans@ucl.ac.uk"
     URL = 'http://6s.ltdri.com/'
     LICENSE = 'Undecided'
-    VERSION = "1.0.1"
+    VERSION = "1.0.2"
     DOWNLOAD_URL="https://github.com/jgomezdans/sixs/zipball/master"
     setup ( configuration = configuration,
     name=DISTNAME,
